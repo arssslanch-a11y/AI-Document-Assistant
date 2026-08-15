@@ -1,0 +1,17 @@
+venv/
+.venv/
+
+__pycache__/
+*.py[cod]
+
+uploads/
+faiss_index/
+
+.env
+.env.*
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
