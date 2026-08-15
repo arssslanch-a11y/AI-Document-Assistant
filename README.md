@@ -22,6 +22,24 @@ The project is designed as a practical portfolio and freelancing-ready foundatio
 - Basic protection against prompt injection from document content
 - Indicate when relevant information cannot be found in the uploaded documents
 
+## Screenshots
+
+### Application Interface
+
+![AI Document Assistant](Screenshots/01-app-startup.png)
+
+### PDF Upload and Processing
+
+![PDF Upload](Screenshots/02-processing.png)
+
+### Question and Answer
+
+![Question Answer](Screenshots/03-process-completed.png)
+
+### Source and Page Information
+
+![Source and Page](Screenshots/04-answer.png)
+
 ## How It Works
 
 The application follows a Retrieval-Augmented Generation (RAG) pipeline:
@@ -54,16 +72,20 @@ User Question ────► Similarity Search
           Answer + Source/Page
 
           Technology Stack
-Technology	Purpose
-Python	Application development
-Streamlit	Web interface
-PyPDF	PDF text extraction
-LangChain Text Splitters	Document chunking
-Sentence Transformers	Semantic embeddings
-FAISS	Vector similarity search
-Ollama	Local LLM runtime
-Qwen 3 1.7B	Local language model
+
+          | Technology               | Purpose                  |
+| ------------------------ | ------------------------ |
+| Python                   | Application development  |
+| Streamlit                | Web interface            |
+| PyPDF                    | PDF text extraction      |
+| LangChain Text Splitters | Document chunking        |
+| Sentence Transformers    | Semantic embeddings      |
+| FAISS                    | Vector similarity search |
+| Ollama                   | Local LLM runtime        |
+| Qwen 3 1.7B              | Local language model     |
+
 Project Structure
+
 AI-Document-Assistant/
 │
 ├── documents/
@@ -77,12 +99,19 @@ AI-Document-Assistant/
 ├── llm/
 │   └── answer_generator.py
 │
+├── Screenshots/
+│   ├── 01-app-startup.png
+│   ├── 02-processing.png
+│   ├── 03-process-completed.png
+│   └── 04-answer.png
+│
 ├── app.py
 ├── requirements.txt
 ├── README.md
 └── .gitignore
 
-The documents module is structured to support document-processing extensions beyond PDF files.
+The documents module is structured to support future document-processing extensions beyond PDF files.
+
 Requirements
 
 Before running the application, make sure the following are installed:
@@ -98,22 +127,29 @@ cd AI-Document-Assistant
 2. Create a Virtual Environment
 python -m venv venv
 3. Activate the Virtual Environment
-
-On Windows PowerShell:
-
+Windows PowerShell
 .\venv\Scripts\Activate.ps1
 4. Install Python Dependencies
 pip install -r requirements.txt
 5. Install and Run Qwen Through Ollama
 ollama run qwen3:1.7b
 
-Make sure Ollama is running before starting the application.
+Make sure Ollama is installed and running before starting the application.
 
 6. Start the Application
 streamlit run app.py
 
 Streamlit will display a local URL in the terminal. Open that URL in your browser.
 
+How to Use
+Start Ollama and make sure the Qwen 3 1.7B model is available.
+Start the Streamlit application.
+Upload a PDF document.
+Allow the application to process and index the document.
+Enter a question related to the uploaded document.
+The application retrieves the most relevant document content.
+Qwen 3 1.7B generates an answer using the retrieved context.
+The application displays the answer together with source and page information.
 Security Considerations
 
 Uploaded document content is treated as untrusted data.
@@ -175,5 +211,6 @@ Author
 
 Arslan
 
-GitHub:
-https://github.com/arssslanch-a11y
+GitHub
+
+github.com/arssslanch-a11y
